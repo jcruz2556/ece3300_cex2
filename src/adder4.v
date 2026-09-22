@@ -13,6 +13,17 @@ module adder4(
 	      output [4:0] result);
    
 // add your code here -- you must use four instances of the full adder "fulladd", defined below
+	wire [4:0] carry;
+	assign carry[0] = 1'b0;
+	
+	genvar i;
+	generate
+		for (i = 0; i < 4; i = i + 1) begin
+			fulladd fa( .x(a[i]), .y(b[i]), .cin(carry[i]), .sum(result[i]), .cout(carry[i+1]);
+					   end
+					   endgenerate
+					   assign result[4] = carry[4];
+					   
    
 endmodule
 
