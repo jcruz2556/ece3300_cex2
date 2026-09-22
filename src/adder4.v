@@ -19,7 +19,7 @@ module adder4(
 	genvar i;
 	generate
 		for (i = 0; i < 4; i = i + 1) 
-			fulladd fa (a[i]), b[i], carry[i], result[i], carry[i+1]);
+			fulladd fa (a[i], b[i], carry[i], result[i], carry[i+1]);
 					   endgenerate
 					   assign result[4] = carry[4];
 					   
